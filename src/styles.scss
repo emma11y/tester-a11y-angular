@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@use "font";
+
+:root {
+  --main-family: "Luciole", Helvetica, Arial, sans-serif;
+  --color-white: #fafafa;
+}
+
+:root,
+[data-selected-theme="dark"] {
+  --bg-color: #222;
+
+  /* :has([class*='cas-pratique']) {
+    --color: #323232;
+    --color-primary: #0000c8;
+    --color-secondary: #960000;
+    --color-red: #ff0000;
+    --color-green: #00ff00;
+  }*/
+
+  --color: #fafafa;
+  --color-primary: #89c4f4;
+  --color-secondary: #f29292;
+  --color-red: #ff3b3b;
+  --color-green: #199e11;
+}
+
+[data-selected-theme="light"] {
+  --bg-color: #fafafa;
+
+  /* :has([class*='cas-pratique']) {
+    --color: #c8c8c8;
+    --color-primary: #00ff00;
+    --color-secondary: #ff0000;
+    --color-red: #ff0000;
+    --color-green: #00ff00;
+  }*/
+
+  --color: #333329;
+  --color-primary: #2653a6;
+  --color-secondary: #d33b3b;
+  --color-red: #d33b3b;
+  --color-green: #1c8615;
+}
+
+html {
+  font-family: var(--main-family);
+  background-color: var(--bg-color);
+  color: var(--color);
+  min-height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 20px;
+}
+
+* {
+  outline: none;
+}
