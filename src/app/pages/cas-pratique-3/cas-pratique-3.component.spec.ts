@@ -16,7 +16,24 @@ describe("Cas pratique 3 : Est-ce que ces images sont vocalisables par le lecteu
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('devrait avoir tous les images avec un attribut alt', () => {
+    const imgs: NodeListOf<HTMLLabelElement> =
+      fixture.nativeElement.querySelectorAll('img');
+
+    imgs.forEach((img) => {
+      expect(img.hasAttribute('alt')).toBeTrue();
+    });
+  });
+
+  it('ne devrait pas avoir le nom du fichier dans les alt', () => {
+    const imgs: NodeListOf<HTMLLabelElement> =
+      fixture.nativeElement.querySelectorAll('img');
+
+    imgs.forEach((img) => {
+      const alt = img.getAttribute('alt');
+
+      expect(alt).not.toContain('.png');
+      expect(alt).not.toContain('.jpg');
+    });
   });
 });

@@ -1,0 +1,46 @@
+.cas-pratique-6 {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    .card {
+      width: 33%;
+      flex: 33%;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @media screen and (max-width: 1199px) {
+        width: 100%;
+        flex: 100%;
+        margin-bottom: 2em;
+      }
+
+      &-body {
+        padding: 1em;
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      a {
+        text-decoration: none;
+        border: 0.1em solid var(--color-primary);
+        border-radius: 0.5em;
+        padding: 1em;
+
+        &:focus-visible,
+        &:hover {
+          background-color: var(--color-primary);
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+}

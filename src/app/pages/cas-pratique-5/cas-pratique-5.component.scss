@@ -1,0 +1,32 @@
+.cas-pratique-5 {
+  .buttons {
+    display: flex;
+
+    @media screen and (max-width: 699px) {
+      flex-direction: column;
+      justify-self: center;
+    }
+
+    button {
+      margin: 0 0.5em;
+      border-radius: 0.5em;
+
+      @media screen and (max-width: 699px) {
+        margin-left: 0;
+        margin-bottom: 0.5em;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    i {
+      font-size: 2em;
+    }
+  }
+
+  .astuce {
+    margin-top: 3em;
+  }
+}

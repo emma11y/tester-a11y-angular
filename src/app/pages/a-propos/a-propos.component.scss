@@ -1,0 +1,85 @@
+.a-propos {
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    @media screen and (max-width: 699px) {
+      flex-direction: column;
+    }
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+
+    @media screen and (max-width: 699px) {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  .reseaux-sociaux {
+    ul {
+      list-style: none;
+      display: flex;
+      margin: auto;
+      padding: 0;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 1em;
+
+        i {
+          vertical-align: middle;
+          font-size: 1.5em;
+          color: var(--color-primary);
+          width: 1.5em;
+          text-align: center;
+
+          &.fa-link {
+            font-size: 1.8em;
+          }
+        }
+      }
+    }
+  }
+
+  .logo-shodo {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wrap-shodo {
+      padding: 0.5em 1em;
+      background-color: var(--color-red);
+    }
+
+    .wrap-logo {
+      background-color: var(--color-red);
+      color: var(--bg-color);
+      text-align: center;
+    }
+
+    p {
+      color: var(--color-white);
+      margin: 0;
+    }
+
+    .brand {
+      text-transform: uppercase;
+      width: 9em;
+      padding-left: 1em;
+    }
+  }
+}

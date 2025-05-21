@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ControlInputComponent } from './control-input.component';
 
-describe('ControlInputComponent', () => {
+describe('Est-ce que le composant control-input a le label avec un attribut for', () => {
   let component: ControlInputComponent;
   let fixture: ComponentFixture<ControlInputComponent>;
 
