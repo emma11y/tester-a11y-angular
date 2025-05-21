@@ -1,0 +1,74 @@
+.cas-pratique-4 {
+  .form {
+    margin-top: 5em;
+    display: flex;
+    margin-bottom: 2em;
+    justify-content: center;
+
+    label {
+      margin-bottom: 0.5em;
+      color: var(--color);
+    }
+
+    textarea,
+    input {
+      border: 0.1em solid var(--color);
+
+      &.valid {
+        border: 0.25em solid var(--color-green);
+      }
+
+      &.invalid {
+        border: 0.25em solid var(--color-red);
+      }
+    }
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    &-input {
+      display: flex;
+
+      &:has(.valid) {
+        i {
+          color: var(--color-green);
+        }
+      }
+
+      &:has(.invalid) {
+        i {
+          color: var(--color-red);
+        }
+      }
+
+      i {
+        margin: auto;
+        padding-left: 1em;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      max-width: 40em;
+      padding: 0.5em;
+    }
+
+    .error {
+      display: none;
+      font-size: 0.8em;
+      margin: 0;
+      padding-top: 0.5em;
+      color: var(--color-red);
+    }
+
+    &:has(.invalid) {
+      .error {
+        display: block;
+      }
+    }
+  }
+}

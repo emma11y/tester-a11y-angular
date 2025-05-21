@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterLinkActiveDirective } from '../../directives/router-link-active.directive';
+import { RouterLinkActiveDirective } from '@directives/router-link-active.directive';
 
 @Component({
   selector: 'router-link',

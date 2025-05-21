@@ -1,0 +1,65 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+
+  label {
+    margin-bottom: 0.5em;
+    color: var(--color);
+  }
+
+  textarea,
+  input {
+    border: 0.1em solid var(--color);
+
+    &.ng-valid.ng-touched {
+      border: 0.25em solid var(--color-green);
+    }
+
+    &.ng-invalid.ng-touched {
+      border: 0.25em solid var(--color-red);
+    }
+  }
+
+  &-input {
+    display: flex;
+
+    &:has(.valid) {
+      i {
+        color: var(--color-green);
+      }
+    }
+
+    &:has(.invalid) {
+      i {
+        color: var(--color-red);
+      }
+    }
+
+    i {
+      margin: auto;
+      padding-left: 1em;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    max-width: 40em;
+    padding: 0.5em;
+  }
+
+  .error {
+    display: none;
+    font-size: 0.8em;
+    margin: 0;
+    padding-top: 0.5em;
+    color: var(--color-red);
+  }
+
+  &:has(.invalid) {
+    .error {
+      display: block;
+    }
+  }
+}

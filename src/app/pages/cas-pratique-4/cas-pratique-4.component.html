@@ -1,1 +1,85 @@
-<p>cas-pratique-4 works!</p>
+<div class="cas-pratique-4">
+  <h2>Cas pratique n°4 : le formulaire</h2>
+
+  <div class="question">
+    <p>Est-ce que ce formulaire est accessible ?</p>
+  </div>
+
+  <div class="astuce">
+    <div class="light">
+      <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+    </div>
+    <p>
+      Faites d'abord plusieurs tests en soumettant le formulaire avant de
+      trouver ce qui ne va pas.
+    </p>
+  </div>
+
+  <form class="form" #form="ngForm">
+    <fieldset>
+      <legend>Vous avez une question ? Veuillez remplir ce formulaire.</legend>
+      <div class="form-content">
+        <app-control-input
+          id="txtFirstName"
+          name="firstName"
+          label="Votre prénom"
+          type="text"
+          [(ngModel)]="messageForm.firstName"
+          [control]="form.controls['firstName']"
+          required
+        ></app-control-input>
+        <app-control-input
+          id="txtLastName"
+          name="lastName"
+          label="Votre nom"
+          type="text"
+          [(ngModel)]="messageForm.lastName"
+          [control]="form.controls['lastName']"
+          required
+        ></app-control-input>
+        <app-control-input
+          id="txtMail"
+          name="mail"
+          label="Votre email"
+          type="text"
+          [(ngModel)]="messageForm.mail"
+          [control]="form.controls['mail']"
+          required
+        ></app-control-input>
+        <app-control-input
+          id="txtMessage"
+          name="message"
+          label="Votre message"
+          type="textarea"
+          [(ngModel)]="messageForm.message"
+          [control]="form.controls['message']"
+          required
+        ></app-control-input>
+        <div>
+          <button type="button" id="btnSubmit" (click)="onSubmit(form)">
+            Envoyer
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="astuce">
+    <div class="light">
+      <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+    </div>
+    <ul>
+      <li>Ne pas afficher l'information uniquement par la couleur ;</li>
+      <li>Préciser si le champ est obligatoire ;</li>
+      <li>Afficher explicitement le message d'erreur.</li>
+    </ul>
+  </div>
+
+  <p>
+    Explication :
+    <a href="https://access42.net/nom-accessible-champ-formulaire/"
+      >Comment donner un nom accessible à un champ de formulaire ?</a
+    >
+    - Access42
+  </p>
+</div>

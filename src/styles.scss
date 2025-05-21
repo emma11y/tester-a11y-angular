@@ -8,15 +8,15 @@
 
 :root,
 [data-selected-theme="dark"] {
-  --bg-color: #222;
+  --bg-color: #222222;
 
-  /* :has([class*='cas-pratique']) {
+  :has([class*="cas-pratique-1"]) {
     --color: #323232;
     --color-primary: #0000c8;
     --color-secondary: #960000;
     --color-red: #ff0000;
     --color-green: #00ff00;
-  }*/
+  }
 
   --color: #fafafa;
   --color-primary: #89c4f4;
@@ -28,13 +28,13 @@
 [data-selected-theme="light"] {
   --bg-color: #fafafa;
 
-  /* :has([class*='cas-pratique']) {
+  :has([class*="cas-pratique-1"]) {
     --color: #c8c8c8;
     --color-primary: #00ff00;
     --color-secondary: #ff0000;
     --color-red: #ff0000;
     --color-green: #00ff00;
-  }*/
+  }
 
   --color: #333329;
   --color-primary: #2653a6;
@@ -224,5 +224,32 @@ fieldset {
   legend {
     margin-bottom: 2em;
     color: var(--color);
+  }
+}
+
+.astuce,
+.remarque {
+  display: flex;
+  flex-direction: row;
+
+  .light,
+  .danger {
+    text-align: left;
+    align-content: center;
+    margin-right: 2em;
+  }
+
+  .fa-lightbulb {
+    font-size: 2em;
+    color: var(--color-secondary);
+  }
+
+  .fa-triangle-exclamation {
+    font-size: 2em;
+    color: var(--color-red);
+  }
+
+  li {
+    margin: 0;
   }
 }

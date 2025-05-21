@@ -1,0 +1,5 @@
+<div role="alert" class="error" *ngIf="isInvalid">
+  <p *ngIf="control.hasError('required')">
+    {{ fieldName }} est un champ obligatoire
+  </p>
+</div>

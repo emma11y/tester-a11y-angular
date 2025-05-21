@@ -1,0 +1,48 @@
+<div class="group">
+  <label>{{ label }}</label>
+
+  @if(type === "text"){
+  <div class="group-input">
+    <input
+      type="text"
+      [id]="id"
+      [name]="name"
+      [(ngModel)]="control.value"
+      #element
+      #ngModel="ngModel"
+      (input)="updateValue($event)"
+      required
+    />
+
+    <!-- [attr.aria-invalid]="ngModel.invalid"
+      [attr.aria-describedby]="id + '-error'"-->
+  </div>
+  <validation-summary
+    [id]="id + '-error'"
+    [control]="ngModel"
+    [fieldName]="label"
+  ></validation-summary>
+  } @else {
+  <div class="group-input">
+    <textarea
+      rows="5"
+      cols="5"
+      [id]="id"
+      [name]="name"
+      [(ngModel)]="value"
+      #element
+      #ngModel="ngModel"
+      (input)="updateValue($event)"
+      required
+    ></textarea>
+
+    <!-- [attr.aria-invalid]="ngModel.invalid"
+      [attr.aria-describedby]="id + '-error'"-->
+  </div>
+  <validation-summary
+    [id]="id + '-error'"
+    [control]="ngModel"
+    [fieldName]="label"
+  ></validation-summary>
+  }
+</div>
