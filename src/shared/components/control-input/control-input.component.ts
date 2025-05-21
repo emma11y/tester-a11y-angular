@@ -6,10 +6,12 @@ import {
 } from '@angular/forms';
 import { ValidationSummaryComponent } from '../validation-summary/validation-summary.component';
 import { NgClass } from '@node_modules/@angular/common';
+import { markControlAsTouched } from '@shared/utilities/form.utility';
+import { ControlElementDirective } from '@shared/directives/control-element.directive';
 
 @Component({
   selector: 'app-control-input',
-  imports: [FormsModule, ValidationSummaryComponent, NgClass],
+  imports: [FormsModule, ValidationSummaryComponent, ControlElementDirective],
   templateUrl: './control-input.component.html',
   styleUrl: './control-input.component.scss',
   providers: [
@@ -51,6 +53,18 @@ export class ControlInputComponent {
     this.value = newValue;
     this.onChanged(newValue);
     this.onTouched();
+  }
+
+  onMarkControlTouched() {
+    markControlAsTouched(this.control);
+  }
+
+  get isInvalid() {
+    return (
+      this.control &&
+      this.control.invalid &&
+      (this.control.dirty || this.control.touched)
+    );
   }
 
   //#endregion

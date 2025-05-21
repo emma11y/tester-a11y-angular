@@ -12,12 +12,45 @@
   input {
     border: 0.1em solid var(--color);
 
-    &.ng-valid.ng-touched {
+    // &.ng-touched.valid,
+    // &.ng-dirty.valid,
+    &.valid {
       border: 0.25em solid var(--color-green);
     }
 
-    &.ng-invalid.ng-touched {
+    // &.ng-touched.invalid,
+    // &.ng-dirty.invalid,
+    &.invalid {
       border: 0.25em solid var(--color-red);
+    }
+  }
+
+  .fa-circle-check,
+  .fa-circle-xmark {
+    display: none;
+  }
+
+  .valid {
+    textarea,
+    input {
+      border: 0.25em solid var(--color-green);
+    }
+
+    .fa-circle-check {
+      display: block;
+      color: var(--color-green);
+    }
+  }
+
+  .invalid {
+    textarea,
+    input {
+      border: 0.25em solid var(--color-red);
+    }
+
+    .fa-circle-xmark {
+      display: block;
+      color: var(--color-red);
     }
   }
 

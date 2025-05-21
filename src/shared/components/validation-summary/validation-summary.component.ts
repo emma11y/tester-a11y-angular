@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@node_modules/@angular/common';
-import { NgModel } from '@node_modules/@angular/forms';
+import { AbstractControl, NgModel } from '@node_modules/@angular/forms';
 import { signal, effect } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { signal, effect } from '@angular/core';
 })
 export class ValidationSummaryComponent {
   @Input() id!: string;
-  @Input() control!: NgModel;
+  @Input() control!: AbstractControl;
   @Input() fieldName!: string;
 
   invalid = signal(this.isInvalid);
@@ -19,8 +19,32 @@ export class ValidationSummaryComponent {
   constructor() {
     effect(() => {
       const currentInvalid = this.invalid();
-      // Ajoutez ici le code à exécuter lorsque 'invalid' change
-      console.log('invalid changed:', currentInvalid);
+
+      if (this.control && (this.control as any).element) {
+        const element: HTMLInputElement | HTMLTextAreaElement = (
+          this.control as any
+        ).element;
+
+        if (!element || !element.parentElement) {
+          return;
+        }
+
+        const classList = element.parentElement.classList;
+
+        if (currentInvalid) {
+          if (!classList.contains('invalid')) {
+            classList.add('invalid');
+          }
+
+          classList.remove('valid');
+        } else {
+          if (!classList.contains('valid')) {
+            classList.add('valid');
+          }
+
+          classList.remove('invalid');
+        }
+      }
     });
   }
 

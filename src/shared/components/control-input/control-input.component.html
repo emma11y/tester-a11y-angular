@@ -1,48 +1,49 @@
 <div class="group">
   <label>{{ label }}</label>
 
-  @if(type === "text"){
   <div class="group-input">
+    @if(type === "text"){
+
     <input
       type="text"
       [id]="id"
       [name]="name"
-      [(ngModel)]="control.value"
-      #element
-      #ngModel="ngModel"
+      [(ngModel)]="value"
       (input)="updateValue($event)"
+      (blur)="onMarkControlTouched()"
       required
+      [controlElement]="control"
     />
 
-    <!-- [attr.aria-invalid]="ngModel.invalid"
+    <!-- [attr.aria-invalid]="control.invalid"
       [attr.aria-describedby]="id + '-error'"-->
-  </div>
-  <validation-summary
-    [id]="id + '-error'"
-    [control]="ngModel"
-    [fieldName]="label"
-  ></validation-summary>
-  } @else {
-  <div class="group-input">
+
+    } @else {
+
     <textarea
       rows="5"
       cols="5"
       [id]="id"
       [name]="name"
       [(ngModel)]="value"
-      #element
-      #ngModel="ngModel"
+      (blur)="onMarkControlTouched()"
       (input)="updateValue($event)"
       required
+      [controlElement]="control"
     ></textarea>
 
-    <!-- [attr.aria-invalid]="ngModel.invalid"
+    <!-- [attr.aria-invalid]="control.invalid"
       [attr.aria-describedby]="id + '-error'"-->
+
+    }
+
+    <!--<i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>-->
   </div>
+
   <validation-summary
     [id]="id + '-error'"
-    [control]="ngModel"
+    [control]="control"
     [fieldName]="label"
   ></validation-summary>
-  }
 </div>

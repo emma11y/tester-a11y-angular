@@ -17,6 +17,10 @@ export class CasPratique4Component {
     console.log(this.messageForm, ngForm.valid);
     if (!ngForm.valid) {
       markControlAsTouchedOnForm(ngForm.form);
+      alert('Vos champs ne sont pas tous remplis !');
+      return;
     }
+
+    alert('Bravo, tous vos champs sont remplis !');
   }
 }
