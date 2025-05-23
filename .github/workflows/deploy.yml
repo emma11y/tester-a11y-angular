@@ -25,4 +25,4 @@ jobs:
         run: npm run build -- --configuration=production
 
       - name: Déployer vers GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular/browser --no-silent
+        run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular/browser --no-silent --user-name="emma11y" --user-email="35635211+emma11y@users.noreply.github.com"
