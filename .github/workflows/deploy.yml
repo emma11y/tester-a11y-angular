@@ -3,7 +3,7 @@ name: Déploiement Angular vers GitHub Pages
 on:
   push:
     branches:
-      - main # ou master, selon ta branche par défaut
+      - main
 
 jobs:
   build-and-deploy:
@@ -25,4 +25,4 @@ jobs:
         run: npm run build -- --configuration=production
 
       - name: Déployer vers GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular
+        run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular --base-href=/tester-a11y-angular/browser --no-silent
