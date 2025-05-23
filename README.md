@@ -1,59 +1,30 @@
-# TesterA11yAngular
+# Comment tester l'accessibilité d'un site internet avec Angular ?
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Ce site non accessible a été conçu pour les conférences en live-coding.
 
-## Development server
+## Abstract
 
-To start a local development server, run:
+Selon [l'Observatoire du respect des obligations d'accessibilité](https://observatoire-access-num.aveuglesdefrance.org/), seulement moins de 5% des sites web sont accessibles pour les personnes handicapées.
+Dans cette conférence, nous explorons les six erreurs d'accessibilité les plus courantes sur un site web. Afin de les corriger, je vous présenterai des conseils simples à mettre en pratique en HTML et un peu de CSS.
+Je vous expliquerai aussi comment effectuer un test avec un lecteur d'écran et le clavier afin de vérifier si sa page web est accessible.
 
-```bash
-ng serve
-```
+[Accéder au site non accessible](https://emma11y.github.io/tester-a11y-angular/)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Forker le projet
 
-## Code scaffolding
+N'hésitez pas à forker le projet pour tester et corriger vous-même les défauts d'accessibilité.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Lancer le projet en local
 
-```bash
-ng generate component component-name
-```
+Lancez `npm run dev` pour un serveur de développement. Naviguez jusqu'à `http://localhost:4200/`. L'application sera automatiquement rechargée si vous modifiez l'un des fichiers sources.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Pour tester l'accessibilité du projet
 
-```bash
-ng generate --help
-```
+Lancez `axe http://localhost:4200/` ou `pa11y http://localhost:4200/` sur chaque page :
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- http://localhost:4200/cas-pratique-1
+- http://localhost:4200/cas-pratique-2
+- http://localhost:4200/cas-pratique-3
+- http://localhost:4200/cas-pratique-4
+- http://localhost:4200/cas-pratique-5
+- http://localhost:4200/cas-pratique-6
