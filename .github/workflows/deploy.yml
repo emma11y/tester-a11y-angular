@@ -1,31 +1,28 @@
-name: Deploy Angular App to GitHub Pages
+name: Déploiement Angular vers GitHub Pages
 
 on:
   push:
     branches:
-      - main # Set this to your default branch
+      - main # ou master, selon ta branche par défaut
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout du code
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Utiliser Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "20" # Set this to your desired Node.js version
+          node-version: "18"
 
-      - name: Install dependencies
+      - name: Installer les dépendances
         run: npm install
 
-      - name: Build Angular app
-        run: npm run build -- --base-href "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+      - name: Construire le projet Angular
+        run: npm run build --
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TESTER_ANGULAR_A11Y_TOKEN }}
-          publish_dir: ./dist/tester-a11y-angular # Set this to your Angular app's output directory
+      - name: Déployer vers GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular
