@@ -34,7 +34,7 @@
     &:last-child {
       border-top-right-radius: 0.5em;
       border-bottom-right-radius: 0.5em;
-      border-left: none;
+      //border-left: none;
     }
   }
 }
@@ -44,6 +44,13 @@
   button {
     width: 5em;
     font-size: 0.8em;
+
+    &:hover,
+    &:focus-visible {
+      outline: 0.25em solid var(--color-secondary) !important;
+      border-color: var(--color-secondary) !important;
+      background-color: var(--color-secondary) !important;
+    }
   }
 }
 
@@ -99,16 +106,4 @@ nav {
       margin-bottom: 0.5em;
     }
   }
-}
-
-#app {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-
-  /* fallback height */
-  min-height: 100vh;
-
-  /* new small viewport height for modern browsers */
-  min-height: 100svh;
 }

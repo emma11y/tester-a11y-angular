@@ -1,0 +1,20 @@
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+
+  /* fallback height */
+  min-height: 100vh;
+
+  /* new small viewport height for modern browsers */
+  min-height: 100svh;
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      flex: 1;
+    }
+  }
+}

@@ -80,6 +80,10 @@
       text-transform: uppercase;
       width: 9em;
       padding-left: 1em;
+
+      span {
+        display: flex;
+      }
     }
   }
 }

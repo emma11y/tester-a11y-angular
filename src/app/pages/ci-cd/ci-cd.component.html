@@ -35,21 +35,21 @@
   <h3>Comment mettre en place un test automatisé avec Github Actions ?</h3>
 
   <p>
-    Sur ce site, j'utilise Axe et Pa11y qui se basent sur les normes
+    Sur ce site, vous pouvez exécuter Axe et Pa11y qui se basent sur les normes
     internationales d'accessibilité WCAG.
   </p>
 
   <ul>
     <li>
-      En créant un fichier <code>yml</code> qui analysera mon code sur GitHub
-      Actions
+      En lancant une ligne de commande en local :
+      <ul>
+        <li><code>axe http://localhost:4200/ </code></li>
+        <li><code>pa11y http://localhost:4200/</code></li>
+      </ul>
     </li>
     <li>
-      Ou en ligne de commande en local :
-      <ul>
-        <li><code>axe http://localhost:5173/tester-a11y/ </code></li>
-        <li><code>pa11y http://localhost:5173/tester-a11y/</code></li>
-      </ul>
+      ou créer un fichier <code>yml</code> qui analysera votre code avec GitHub
+      Actions
     </li>
   </ul>
 

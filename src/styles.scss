@@ -30,7 +30,7 @@
 
   :has([class*="cas-pratique-1"]) {
     --color: #c8c8c8;
-    --color-primary: #00ff00;
+    --color-primary: #0000ff61;
     --color-secondary: #ff0000;
     --color-red: #ff0000;
     --color-green: #00ff00;
@@ -62,18 +62,6 @@ body {
   outline: none;
 }
 
-#app {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-
-  /* fallback height */
-  min-height: 100vh;
-
-  /* new small viewport height for modern browsers */
-  min-height: 100svh;
-}
-
 .content {
   max-width: 1200px;
   margin: auto;
@@ -98,7 +86,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   color: var(--color);
 }
 
@@ -154,7 +142,7 @@ button {
   font-family: var(--main-family);
   font-size: 1em;
 
-  //&:focus-visible,
+  &:focus-visible,
   &:hover {
     color: var(--bg-color);
     background-color: var(--color-primary);
@@ -179,7 +167,7 @@ a {
     text-decoration-color: var(--color-secondary);
   }
 
-  //&:focus-visible,
+  &:focus-visible,
   &:hover {
     text-decoration-thickness: 0.2em;
     text-decoration-line: underline;

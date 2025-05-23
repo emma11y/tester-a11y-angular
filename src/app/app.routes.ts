@@ -16,50 +16,86 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    data: {
+      title: 'Accueil',
+    },
     component: AccueilComponent,
   },
   {
     path: 'cas-pratique-1',
+    data: {
+      title: 'Cas pratique 1',
+    },
     component: CasPratique1Component,
   },
   {
     path: 'cas-pratique-2',
+    data: {
+      title: 'Cas pratique 2',
+    },
     component: CasPratique2Component,
   },
   {
     path: 'cas-pratique-3',
+    data: {
+      title: 'Cas pratique 3',
+    },
     component: CasPratique3Component,
   },
   {
     path: 'cas-pratique-4',
+    data: {
+      title: 'Cas pratique 4',
+    },
     component: CasPratique4Component,
   },
   {
     path: 'cas-pratique-5',
+    data: {
+      title: 'Cas pratique 5',
+    },
     component: CasPratique5Component,
   },
   {
     path: 'cas-pratique-6',
+    data: {
+      title: 'Cas pratique 6',
+    },
     component: CasPratique6Component,
   },
   {
     path: 'ci-cd',
+    data: {
+      title: 'CI/CD',
+    },
     component: CiCdComponent,
   },
   {
     path: 'bonus',
+    data: {
+      title: 'Bonus',
+    },
     component: BonusComponent,
   },
   {
     path: 'faq',
+    data: {
+      title: 'FAQ',
+    },
     component: FaqComponent,
   },
   {
     path: 'ressources',
+    data: {
+      title: 'Ressources',
+    },
     component: RessourcesComponent,
   },
   {
     path: 'a-propos',
+    data: {
+      title: 'A propos',
+    },
     component: AProposComponent,
   },
 ];

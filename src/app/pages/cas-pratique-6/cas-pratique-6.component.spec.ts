@@ -28,6 +28,7 @@ describe('Cas pratique 6 : Est-ce que ces liens sont accessibles ?', () => {
       'par ici',
       'par là',
       'regardez ici',
+      'cliquez sur ce lien',
     ];
 
     links.forEach((link) => {
