@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Construire le projet Angular
-        run: npm run build --
+        run: npm run build -- --configuration=production
 
       - name: Déployer vers GitHub Pages
         run: npx angular-cli-ghpages --dir=dist/tester-a11y-angular

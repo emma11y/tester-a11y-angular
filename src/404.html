@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="refresh" content="0; url='./'" />
+    <title>
+      Erreur 404 - Comment tester l'accessibilité d'un site internet avec
+      Angular ?
+    </title>
+
+    <link rel="stylesheet" href="style.scss" />
+    <link rel="stylesheet" href="src/assets/fontawesome/all.min.css" />
+  </head>
+  <body>
+    <main role="main">
+      <div class="content text-center">
+        <i
+          class="fa-solid fa-triangle-exclamation"
+          aria-hidden="true"
+          style="font-size: 10em; color: var(--color-red)"
+        ></i>
+
+        <h1>Erreur 404</h1>
+
+        <p>
+          Si vous n'êtes pas redirigé automatiquement, retourner sur la page
+          d'<a href="./">Accueil</a>.
+        </p>
+      </div>
+    </main>
+
+    <!-- fix routing on github pages : https://gist.github.com/leonsilicon/1278d429d7c915a9866bc6ea73453d9a -->
+    <script>
+      sessionStorage.redirect = location.href;
+      const projectPages = true; // If you're using the base .github.io domain without a path (i.e. <name>.github.io is your home page), set this to false
+      const l = window.location;
+      const repo = projectPages ? "/" + l.pathname.split("/")[1] : "";
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") + repo
+      );
+    </script>
+  </body>
+</html>
