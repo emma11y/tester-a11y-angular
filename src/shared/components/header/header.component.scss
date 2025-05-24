@@ -45,8 +45,8 @@
     width: 5em;
     font-size: 0.8em;
 
-    &:hover,
-    &:focus-visible {
+    //&:focus-visible,
+    &:hover {
       outline: 0.25em solid var(--color-secondary) !important;
       border-color: var(--color-secondary) !important;
       background-color: var(--color-secondary) !important;

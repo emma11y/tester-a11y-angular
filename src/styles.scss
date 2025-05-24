@@ -142,7 +142,7 @@ button {
   font-family: var(--main-family);
   font-size: 1em;
 
-  &:focus-visible,
+  //&:focus-visible,
   &:hover {
     color: var(--bg-color);
     background-color: var(--color-primary);
@@ -167,7 +167,7 @@ a {
     text-decoration-color: var(--color-secondary);
   }
 
-  &:focus-visible,
+  // &:focus-visible,
   &:hover {
     text-decoration-thickness: 0.2em;
     text-decoration-line: underline;
